@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "The Github Project Manager.",
   "main": "index.js",
-  "engines": { "node": "7.6.x" },
+  "engines": {
+    "node": "7.6.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "node_modules/.bin/nodemon index.js",
@@ -12,7 +14,8 @@
   "author": "Erik Fried",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.0.1"
+    "koa": "^2.0.1",
+    "koa-router": "^7.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
