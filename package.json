@@ -6,7 +6,8 @@
   "engines": { "node": "7.6.x" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "node_modules/.bin/nodemon index.js"
+    "start:dev": "node_modules/.bin/nodemon index.js",
+    "build:extension": "echo nothing yet"
   },
   "author": "Erik Fried",
   "license": "ISC",
