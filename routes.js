@@ -6,6 +6,6 @@ router
     .get('/', ctx => {
         ctx.body = 'Hello Koa';
     })
-    .post('/webhook', bodyParser, require('./webhook'));
+    .post('/webhook', bodyParser, require('./app/webhook'));
 
 module.exports = router.routes();

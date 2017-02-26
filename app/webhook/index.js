@@ -4,17 +4,12 @@ const HEADERS = {
     delivery: 'X-GitHub-Delivery'.toLowerCase()   // Unique ID for this delivery.
 };
 
-async function issuesHandler(ctx, next) {
-    console.log('ctx', ctx.request.body);
-    await next();
-}
-
 const defaultHandler = async (ctx, next, event) => {
     console.log('Ignoring event', event, ctx.request.header, JSON.stringify(ctx.request.body));
     await next();
 };
 const eventHandlers = {
-    issues: issuesHandler
+    issues: require('./handlers/issues')
 };
 
 module.exports = async (ctx, next) => {

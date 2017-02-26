@@ -15,9 +15,17 @@
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     },
-    "WEB_CONCURRENCY": {
-      "description": "The number of processes to run.",
-      "value": "5"
+    "GITHUB_TOKEN": {
+      "description": "A Github Oauth access token used for api access"
+    },
+    "GITHUB_API_BASE": {
+      "description": "The base uri of the github api. Set this to `https://<host-name>/api/v3/` for Github enterprise installations"
+    },
+    "GITHUB_REPO_OWNER": {
+      "description": "Owner of the repo containing issues"
+    },
+    "GITHUB_REPO_NAME": {
+      "description": "Name of the repo containing issues"
     }
   },
   "formation": {
