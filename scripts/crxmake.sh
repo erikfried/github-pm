@@ -3,7 +3,13 @@
 # Purpose: Pack a Chromium extension directory into crx format
 
 KEY_FILE="/tmp/sign-key.pem"
-echo "${EXTENSION_SIGN_KEY}"
+
+if [ -z "${EXTENSION_SIGN_KEY}" ]; then
+    echo "WARNING!"
+    echo "Not able to build .crx, EXTENSION_SIGN_KEY must be set"
+    echo ""
+    exit 0
+fi
 echo "${EXTENSION_SIGN_KEY}" | base64 --decode > "${KEY_FILE}"
 
 dir="extension"
