@@ -8,6 +8,7 @@ router
     })
     .post('/webhook', bodyParser(), (ctx, next) => {
         console.log('ctx', ctx.request.body);
+        ctx.status = 202;
         next();
     });
 
