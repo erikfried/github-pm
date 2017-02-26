@@ -49,8 +49,14 @@ const addLabelToIssue = async (issueNumber, label) => {
 }
 module.exports = async (ctx, next) => {
     const data = ctx.request.body;
-
-    const { issue: { number: issueNumber, milestone: { title } = {} }, labels = [] } = data;
+    const {
+        issue: {
+            number: issueNumber,
+            milestone: {
+                title
+            } = {}
+        },
+        labels = [] } = data;
 
     if (title) {
         const expectedLabel = title.substring(0, 20);

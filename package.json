@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start:dev": "node_modules/.bin/nodemon index.js",
-    "build:extension": "echo nothing yet"
+    "build:extension": "./scripts/crxmake.sh"
   },
   "author": "Erik Fried",
   "license": "ISC",
@@ -18,7 +18,8 @@
     "github-api": "^3.0.0",
     "koa": "^2.0.1",
     "koa-body": "^2.0.0",
-    "koa-router": "^7.0.1"
+    "koa-router": "^7.0.1",
+    "koa-send": "^3.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
