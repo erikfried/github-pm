@@ -10,7 +10,7 @@ async function issuesHandler(ctx, next) {
 }
 
 const defaultHandler = (ctx, next, event) => {
-    console.log('Ignoring event', event, ctx.request.body);
+    console.log('Ignoring event', ctx.request.header, event, JSON.stringify(ctx.request.body));
     next();
 };
 const eventHandlers = {
