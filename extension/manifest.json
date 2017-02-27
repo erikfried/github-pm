@@ -1,8 +1,8 @@
 {
   "name": "Github tools",
-  "version": "0.1",
+  "version": "1.0",
   "manifest_version": 2,
-  "description": "Extends github",
+  "description": "Extends github projects - hides clutter and adds filtering",
   "content_scripts": [
     {
       "matches": [
@@ -12,7 +12,7 @@
         "styles.css"
       ],
       "js": [
-        "contentScript.js"
+        "contentScript.js", "filtering.js"
       ]
     }
   ]
