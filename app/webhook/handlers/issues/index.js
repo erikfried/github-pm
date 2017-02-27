@@ -35,7 +35,7 @@ const addLabelToIssue = async (issueNumber, label) => {
         title: data.title,
         body: data.body,
         state: data.state,
-        assignees: data.assignees,
+        assignees: data.assignees.map(({login}) => login),
         milestone: data.milestone.number, //Format for update and reponse differs.
         labels: data.labels.concat(label)
     };
