@@ -9,6 +9,7 @@ router
         Download <a download href="/extension.crx">extension</a>,
         open <pre>chrome://extensions</pre> and drag the downloaded file there</html>`;
     })
+    .get('/extension/update.xml', async ctx => send(ctx, 'extension/update.xml'))
     .get('/extension.crx', async (ctx) => {
         return await send(ctx, 'extension.crx')
     })
