@@ -43,7 +43,8 @@ const addLabelToIssue = async (issueNumber, label) => {
         await issues.editIssue(issueNumber, issue);
         console.log('Updated issue');
     } catch (e) {
-        console.log('ERROR UPDATING', e.response && e.response.status, e.response && JSON.stringify(e.response.data, null, 2));
+        console.log('ERROR UPDATING', e.response && e.response.status, e.response && e.response.data);
+        console.log('Data:', issue);
         throw e;
     }
 }
