@@ -48,7 +48,7 @@ const addLabelToIssue = async (issueNumber, label) => {
     }
 }
 
-const getLabel = milestone => (milestone && milestone.title ? title.substring(0, 20): null);
+const getLabel = milestone => (milestone && milestone.title ? milestone.title.substring(0, 20): null);
 
 module.exports = async (ctx, next) => {
     const data = ctx.request.body;

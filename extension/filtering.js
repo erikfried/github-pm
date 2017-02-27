@@ -211,7 +211,9 @@ function createMenuList(hideColumnsDropDown, listText) {
     return selectMenuList;
 }
 
+console.log('Filtering');
 if (location.href.indexOf('projects') > 0) {
+    console.log('Filtering active');
     var hiddenColumns = JSON.parse(localStorage.getItem('hiddencolumns'));
     var shownIssues = JSON.parse(localStorage.getItem('shownissues'));
 
