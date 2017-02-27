@@ -15,6 +15,5 @@
         "contentScript.js"
       ]
     }
-  ],
-  "update_url": "https://erik-github.herokuapp.com/extension/update.xml"
+  ]
 }
