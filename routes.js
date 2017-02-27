@@ -7,16 +7,10 @@ router
     .get('/', ctx => {
         ctx.body = `
             <html>  
-                <head>
-                    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/idafnjemhdoagijahjhefddfhdiiibpc">
+                <head>                
                 </head>
                 <body>
-                    <button onclick="chrome.webstore.install()" id="install-button">Add to Chrome</button>
-                    <script>
-                    if (chrome.app.isInstalled) {
-                        document.getElementById('install-button').style.display = 'none';
-                    }
-                    </script>
+                    <a href="https://chrome.google.com/webstore/detail/idafnjemhdoagijahjhefddfhdiiibpc">Install extension</a>
                 </body>
             </html>`;
     })
