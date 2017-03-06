@@ -1,3 +1,5 @@
+/* Shamelessly stolen from Max */
+
 function saveToLocalStorage(key, ...value) {
     const values = JSON.parse(localStorage.getItem(key)) || [];
 
@@ -126,7 +128,7 @@ function showIssues(shownLabels) {
 
 function getUniqueLabels() {
     let labels = [];
-    Array.from(document.getElementsByClassName('issue-card')).forEach(el => {
+    document.querySelectorAll('.issue-card').forEach(el => {
         const hasLabel = el.querySelector('.labels');
         if (hasLabel) {
             const issueLabels = hasLabel.textContent.trim().split('\n').map(l => l.trim());
@@ -211,9 +213,7 @@ function createMenuList(hideColumnsDropDown, listText) {
     return selectMenuList;
 }
 
-console.log('Filtering');
-if (location.href.indexOf('projects') > 0) {
-    console.log('Filtering active');
+function runIt() {
     var hiddenColumns = JSON.parse(localStorage.getItem('hiddencolumns'));
     var shownIssues = JSON.parse(localStorage.getItem('shownissues'));
 
@@ -239,4 +239,9 @@ if (location.href.indexOf('projects') > 0) {
 
     hiddenColumns && addCrossMarks(hiddenColumns);
     shownIssues && addCheckMarks(shownIssues);
+}
+
+if (location.href.indexOf('projects') > 0) {
+    // Not the most elegant but it works... good enough
+    setTimeout(runIt, 500);
 }
