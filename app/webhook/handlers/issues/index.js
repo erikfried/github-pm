@@ -50,6 +50,14 @@ const addLabelToIssue = async (issueNumber, label) => {
 }
 
 const getLabel = milestone => (milestone && milestone.title ? milestone.title.substring(0, 20): null);
+const labelIssue = (ctx, issueNumber, label) => {
+    try {
+        ensureLabel(label);
+        addLabelToIssue(issueNumber, label)
+    } catch (e) {
+      ctx.status = 500;
+    }
+}
 
 module.exports = async (ctx, next) => {
     const data = ctx.request.body;
@@ -62,12 +70,10 @@ module.exports = async (ctx, next) => {
 
     const label = getLabel(milestone);
     if (label) {
-
         if  (labels.find(({name}) => name === label)) {
             console.log('OK, issue already contains label for milestone');
         } else {
-            ensureLabel(label);
-            addLabelToIssue(issueNumber, label)
+            labelIssue(ctx, issueNumber, label);
         }
     }
 
