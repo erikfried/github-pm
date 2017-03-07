@@ -1,6 +1,6 @@
 {
   "name": "Github tools",
-  "version": "1.0",
+  "version": "1.2",
   "manifest_version": 2,
   "description": "Extends github projects - hides clutter and adds filtering",
   "content_scripts": [
